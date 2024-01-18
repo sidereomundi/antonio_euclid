@@ -1,0 +1,150 @@
+% Template file for EC papers prepared for A&A 
+% prepared by John Peacock, Peter Schneider, Douglas Scott & Patrick Simon 
+%
+% You need to copy the latest version of the file euclid.sty 
+% and the two files aa.bst and aa.cls from A&A into the same directory 
+% as your LATEX source file. These files are available on the 
+% same Overleaf site from where you got this template file.  
+%
+% For producing the referee version of you paper, 
+% comment out the first of these line, and uncomment the second line 
+%
+\documentclass[longauth]{aa}
+%\documentclass[longauth,referee]{aa}
+
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{scalerel}
+
+\usepackage[table]{xcolor}
+
+\bibliographystyle{aa}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{txfonts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[pdfencoding=auto,psdextra]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=blue
+}
+\urlstyle{tt}
+
+% suppress these aa-package warnings:
+% package hyperref warning: suppressing link with empty target
+\makeatletter
+\renewcommand*\aa@pageof{, page \thepage{} of \pageref*{LastPage}}
+\makeatother
+
+% To add links in your PDF file, use the package "hyperref"
+% with options according to your LaTeX or PDFLaTeX drivers.
+%
+\usepackage[utf8]{inputenc}
+
+\usepackage[switch, modulo]{lineno}
+\linenumbers
+
+\usepackage{euclid}
+
+
+\begin{document}
+%
+% Put the title and authors of your (Standard Project) paper here
+%
+
+\title{\Euclid\/: Title of your paper\thanks{This paper is published on
+       behalf of the Euclid Consortium}}
+
+%% please do not edit the author list once you copy it from the
+%% Publication Portal -- contact ECEB Bureau for changes
+   
+\newcommand{\orcid}[1]{} %% define as link to https://orcid.org/#1 if needed
+\author{\normalsize Euclid Collaboration:
+  F.~Author$^{1}$\thanks{Corresponding author,
+    \email{author@institute.mail}}, S.~Writer$^{2,3}$, A.~Third$^{3}$,
+  F.~Plotter$^{4}$}
+
+%
+% For a Key Project paperm please use instead:
+%
+% \title{\Euclid\/ preparation. TBD. Your title}
+%
+% \author{Euclid Collaboration: F.~Author, .....}
+%
+
+\institute{$^{1}$ Dark Energy Institute\\
+$^{2}$ Center for Large-Scale Structure\\
+$^{3}$ Institute for Fundamental Research \\
+$^{4}$ Institute for Astrophysics and Cosmology\\}
+
+% 
+% Put your abstract here:
+%
+\abstract{
+    }
+%
+% Provide up to five key words:
+%
+    \keywords{Key word 1, Key word 2, Key word 3}
+%    from the list in
+%     https://www.aanda.org/for-authors/latex-issues/information-files#pop}
+%
+% Add short versions of title and author list for page headings
+%
+   \titlerunning{ }
+   \authorrunning{ }
+   
+   \maketitle
+%
+%-------------------------------------------------------------------
+%
+%
+%   Start the main text of your paper here
+%
+   
+\section{\label{sc:Intro}Introduction}
+%
+
+\section{\label{sc:}  }
+
+%
+% Add the acknowledgement using the achnowledgements environment.
+% Do not use \acknowledgement{....} as this affects the formatting
+% of the references.
+%
+
+\begin{acknowledgements}
+  
+\AckEC  
+\end{acknowledgements}
+
+%
+% Here comes the reference list, generated via bibtex from
+% your bibfile my.bib and Euclid.bib. Please make sure that
+% the same paper is not referenced twice, one from your my.bib
+% file, and once from Euclid.bib.
+%
+
+\bibliography{my, Euclid}
+
+%
+% Now you can add appendices.
+% In this example, the appendices are in one column mode.
+% If that is not requires, comment out \onecolumn
+% Note that appendices in A\&A come {\it after\/} the references.
+
+\begin{appendix}
+  \onecolumn %If you don't want single column for the Appendix, please
+             %comment this out
+  
+\section{}
+
+
+\section{}
+%
+\end{appendix}
+
+\end{document}
